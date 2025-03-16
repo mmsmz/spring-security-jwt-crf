@@ -1,7 +1,10 @@
 package com.SpringSecurity.JWT.security.repo;
 
-import org.apache.catalina.User;
+
+import com.SpringSecurity.JWT.security.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepo extends JpaRepository<User, Integer> {
+public interface UserRepo extends JpaRepository<UserEntity, Integer> {
+    UserEntity findByUserName(String username);
+
 }
